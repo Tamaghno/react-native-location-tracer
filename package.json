@@ -15,7 +15,9 @@
     "pubnub-react": "^1.2.0",
     "react": "^16.8.3",
     "react-native": "^0.59.10",
-    "react-native-maps": "0.24.2"
+    "react-native-maps": "0.24.2",
+    "react-navigation": "^4.0.10",
+    "react-navigation-drawer": "^2.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

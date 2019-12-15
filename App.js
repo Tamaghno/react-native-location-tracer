@@ -4,8 +4,11 @@ import MapView, {Marker, AnimatedRegion, Polyline, PROVIDER_GOOGLE} from "react-
 import haversine from "haversine";
 import position from "./assets/position.png";
 
-const LATITUDE_DELTA = 0.009;
-const LONGITUDE_DELTA = 0.009;
+
+
+
+const LATITUDE_DELTA = 0.09;
+const LONGITUDE_DELTA = 0.09;
 const LATITUDE = 0;
 const LONGITUDE = 0;
 
@@ -412,6 +415,9 @@ class AnimatedMarkers extends React.Component {
       }
     ]
     return (
+
+    
+
       <View style={styles.container}>
       
         <MapView
@@ -423,7 +429,7 @@ class AnimatedMarkers extends React.Component {
           region={this.getMapRegion()}
           customMapStyle={mapStyle}
         >
-          <Polyline coordinates={this.state.routeCoordinates} strokeWidth={3} />
+          <Polyline coordinates={this.state.routeCoordinates} strokeWidth={2} />
           <Marker.Animated
             ref={marker => {
               this.marker = marker;
@@ -435,11 +441,19 @@ class AnimatedMarkers extends React.Component {
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={[styles.bubble, styles.button]}>
             <Text style={styles.bottomBarContent}>
-              {parseFloat(this.state.distanceTravelled).toFixed(3)} km
+              {parseFloat(this.state.distanceTravelled).toFixed(2)} km
             </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={[styles.bubble, styles.button]}>
+            <Text style={styles.bottomBarContent}>
+               km/h goes here
+            </Text>
+            
           </TouchableOpacity>
         </View>
-        <Text style={styles.head}>©tamaghno 1.0</Text>
+        
+        <Text style={styles.head}>©tamaghno 1.0.1</Text>
       </View>
     );
   }
